@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INFRA SETUP &mdash; newtemp .5 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="What is CCF?" href="whatisccf.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> newtemp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whatisccf.html">What is CCF?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Setting Up CCF</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">INFRA SETUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#set-up-aws-mwaa">Set up AWS MWAA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#rds-setup">RDS setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#secret-manager">Secret Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#ses">SES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#emr">EMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id1">DEPLOYMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id2">RUNBOOK</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">newtemp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>INFRA SETUP</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ccfsetup.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>ettingup:
+Setting Up CCF
+===============</p>
+<dl class="simple">
+<dt>This document is there to help us guide through each step on as to how to set up ccf. It will contain the following :</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#infra"><span class="std std-ref">INFRA SETUP</span></a></p></li>
+<li><p><a class="reference internal" href="#deployment"><span class="std std-ref">DEPLOYMENT</span></a></p></li>
+<li><p><a class="reference internal" href="#runbook"><span class="std std-ref">RUNBOOK</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="infra-setup">
+<h1>INFRA SETUP<a class="headerlink" href="#infra-setup" title="Permalink to this headline">¶</a></h1>
+<p>For the INFRA SETUP of CCF process like ingestion and dw these following steps have to be followed :</p>
+</div>
+<div class="section" id="set-up-aws-mwaa">
+<h1>Set up AWS MWAA<a class="headerlink" href="#set-up-aws-mwaa" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>Open the Amazon MWAA console by going to <a class="reference external" href="https://console.aws.amazon.com/mwaa/home/">https://console.aws.amazon.com/mwaa/home/</a></p></li>
+<li><p>Use the <strong>AWS Region selector</strong> to select your region.</p></li>
+<li><p>Choose <strong>Create environment</strong>.</p></li>
+</ul>
+</div></blockquote>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZET50M20hkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="section" id="rds-setup">
+<h1>RDS setup<a class="headerlink" href="#rds-setup" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>Configurations:</p></li>
+</ul>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>At the time of launch, an username and password is created which is used to access RDS. The access will be granted provided the credentials are correct and the AWS resource from which the access is requested has access to connect to RDS.</p></li>
+<li><p>Type - db.r5.xlarge</p></li>
+<li><p>Engine - Aurora MySQL 5.7.12</p></li>
+<li><p>Storage – 500 GB</p></li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="secret-manager">
+<h1>Secret Manager<a class="headerlink" href="#secret-manager" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>New secret in AWS Secret Manager having RDS credentials stored with “username” and “password” keys.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="ses">
+<h1>SES<a class="headerlink" href="#ses" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>Emails should be verified in SES which will be used in configs for sending notification mails.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="emr">
+<h1>EMR<a class="headerlink" href="#emr" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>5.1. Following EMR configurations needed to configure CCF:
+a. Roles
+i. EMR role - Refer to <a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role.html">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role.html</a></p>
+<p>ii.EC2 instance profile - Refer to <a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-launch-with-quick-options.html">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-launch-with-quick-options.html</a></p>
+<ol class="loweralpha simple" start="2">
+<li><p>S3 folder - This option specifies the path to a folder in an Amazon S3 bucket where you want Amazon EMR to write log data.</p></li>
+</ol>
+<p>c. Security Groups
+i. ElasticMapReduce-Master-Private - For rules in this security group,</p>
+<blockquote>
+<div><p>see <a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-master-private">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-master-private</a></p>
+</div></blockquote>
+<p>ii.ElasticMapReduce-Slave-Private - For rules in this security group, <a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-slave-private">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-slave-private</a>
+iii.ElasticMapReduce-ServiceAccess - For rules in this security group, see <a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-sa-private">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-sa-private</a>
+1. Following EMR configurations needed to configure CCF:
+a. Roles
+i. EMR role - Refer to <a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role.html">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role.html</a>
+ii.EC2 instance profile - Refer to <a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-launch-with-quick-options.html">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-launch-with-quick-options.html</a>
+b. S3 folder - This option specifies the path to a folder in an Amazon S3bucket where you want Amazon EMR to write log data.
+c. Security Groups
+i. ElasticMapReduce-Master-Private - For rules in this security group,see <a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-master-private">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-master-private</a></p>
+<blockquote>
+<div><dl class="simple">
+<dt>ii.ElasticMapReduce-Slave-Private - For rules in this security group,</dt><dd><p><a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-slave-private">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-slave-private</a></p>
+</dd>
+</dl>
+<p>iii.ElasticMapReduce-ServiceAccess - For rules in this security group,see <a class="reference external" href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-sa-private">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-man-sec-groups.html#emr-sg-elasticmapreduce-sa-private</a></p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h1>DEPLOYMENT<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>This section will help you in deploying RDS.</p>
+<blockquote>
+<div><p>A MySQL  engine based RDS was setup and launched in CC for storing our configurations and logs.
+At the time of launch, a username and password is created which is used to access RDS. The access will be granted provided the credentials are correct and the AWS resource from which the access is requested has access to connect to RDS.</p>
+<p>After executing the Common Components Schema script the following tables will be created.</p>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>ctl_dataset_master</p></td>
+</tr>
+<tr class="row-even"><td><p>ctl_dqm_master</p></td>
+</tr>
+<tr class="row-odd"><td><p>ctl_cluster_config</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h1>RUNBOOK<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>Now let’s understand the execution of the profiler.</p>
+<ol class="arabic simple">
+<li><p>In the environment_params.json file, edit the following fields specifically:</p></li>
+</ol>
+<blockquote>
+<div><p><a href="#id3"><span class="problematic" id="id4">*</span></a>dataset_list
+<a href="#id5"><span class="problematic" id="id6">*</span></a>layer_list
+<a href="#id7"><span class="problematic" id="id8">*</span></a>aws_aacount_id</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Further, after uploading this JSON to the S3 Location and then providing it in Glue Job in Referenced Path (As mentioned in the Deployment Doc) Trigger the Job from Glue Console.</p></li>
+<li><p>Further, after running the job, you may check the status and details of job in the Log Table –
+<em>log_profiler_sumry</em></p></li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="whatisccf.html" class="btn btn-neutral float-left" title="What is CCF?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, aranya bhadu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -11,5 +11,5 @@ And they expect us to process that data basically clean that data transform that
 
 Below is an image of the ingestion process.
 
-.. figure:: /home/ec2-user/abnew/newtemp/docs/source/ingestion_screenshot.jpg
+.. figure:: /docs/source/ingestion_screenshot.jpg
 

@@ -1,4 +1,4 @@
-tsccf:
+.. _whatsccf:
 
 What is CCF?
 ============

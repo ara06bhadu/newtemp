@@ -1,4 +1,4 @@
-ettingup:
+.. _settingup:
 Setting Up CCF
 ===============
 
